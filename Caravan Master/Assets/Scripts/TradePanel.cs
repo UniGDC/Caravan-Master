@@ -10,7 +10,7 @@ public class TradePanel : MonoBehaviour
     private string price;
 
     private float maxDuration;
-    private float currentDuration; //in seconds in the future
+    private float currentDuration;
 
 
     void SetTrade(string _location, string _item, int _price, float _duration) // Runs when the trade is initially created
@@ -23,8 +23,17 @@ public class TradePanel : MonoBehaviour
         currentDuration = maxDuration;
     }
 
-    void FixedUpdate()
+    void Update()
     {
         currentDuration -= Time.deltaTime;
+        if (currentDuration <= 0)
+        {
+            Expire();
+        }
+    }
+
+    void Expire()
+    {
+        Debug.Log("expired");
     }
 }
