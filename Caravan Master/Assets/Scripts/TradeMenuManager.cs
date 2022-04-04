@@ -25,6 +25,6 @@ public class TradeMenuManager : MonoBehaviour
 
     void NewTrade()
     {
-        Debug.Log("trade");
+        
     }
 }
