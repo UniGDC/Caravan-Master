@@ -15,7 +15,7 @@ public class TradePanel : MonoBehaviour
     private float maxDuration;
     private float currentDuration;
 
-    public void SetTrade(string _location, string _item, int _price, float _duration) // Runs when the trade is initially created
+    public void SetTrade(string _location, string _item, int _price, float _duration, string textTemplate) // Runs when the trade is initially created
     {
         location = _location;
         item = _item;
@@ -24,7 +24,7 @@ public class TradePanel : MonoBehaviour
         maxDuration = _duration;
         currentDuration = maxDuration;
 
-        SetText();
+        SetText(textTemplate);
     }
 
     void Update()
@@ -41,7 +41,7 @@ public class TradePanel : MonoBehaviour
 
     void Expire()
     {
-        
+        GameObject.Destroy(gameObject);
     }
 
     public void Accept()
@@ -54,9 +54,9 @@ public class TradePanel : MonoBehaviour
         GameObject.Destroy(gameObject);
     }
 
-    void SetText()
+    void SetText(string textTemplate)
     {
-        //Select random text template
-        tradeText.text = location + " dispatches a trade of $" + price + " for these " + item + "s. Is this trade satisfactory?";
+        //Select random text template        
+        tradeText.text = textTemplate.Replace("[location]", location).Replace("[price]", price).Replace("[item]", item);
     }
 }

@@ -8,6 +8,7 @@ public class TradeMenuManager : MonoBehaviour
     public GameObject panelPrefab;
     public GameObject[] locationList;
 
+    public string[] textTemplateList;
 
     public float tradeInterval = 10;
     private float tradeTimer;
@@ -45,12 +46,14 @@ public class TradeMenuManager : MonoBehaviour
         int itemIndex = Random.Range(0, itemList.Length);
         Item item = itemList[itemIndex];
 
+        int textTemplateIndex = Random.Range(0, textTemplateList.Length);
+        string textTemplate = textTemplateList[textTemplateIndex];
 
         string locationName = location.name;
         string itemName = item.name; 
         int price = item.price + Random.Range(-priceChange, priceChange); //uint and int mayhem
 
         float duration = Random.Range(minDuration, maxDuration);
-        panel.GetComponent<TradePanel>().SetTrade(locationName, itemName, price, duration);
+        panel.GetComponent<TradePanel>().SetTrade(locationName, itemName, price, duration, textTemplate);
     }
 }

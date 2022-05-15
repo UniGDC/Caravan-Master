@@ -692,6 +692,13 @@ MonoBehaviour:
   locationList:
   - {fileID: 446079506}
   - {fileID: 577348631}
+  textTemplateList:
+  - Reporting from [location], a trade of [price] for [item] has recently dropped.
+    Is this a quality trade?
+  - "\u201C[location] dispatches a trade of [price] for [item]. Is this trade satisfactory?\u201D"
+  - "\u201C[item] of [price] has been transmitted from [location]. Is this trade
+    adequate?\u201D"
+  - "\u201C[location] has sent [item] for. Shall we proceed with the trade?"
   tradeInterval: 10
   maxDuration: 40
   minDuration: 60
@@ -1763,9 +1770,9 @@ MonoBehaviour:
   itemList:
   - name: Tools
     price: 20
-  - name: Variety of hunting ammunitions
+  - name: Bullets
     price: 15
-  - name: Matches/Lighters
+  - name: Matches
     price: 5
   - name: Hunting Equipment
     price: 30
