@@ -4,5 +4,5 @@ using System;
 public struct Item
 {
     public string name;
-    public uint price;
+    public int price;
 }
