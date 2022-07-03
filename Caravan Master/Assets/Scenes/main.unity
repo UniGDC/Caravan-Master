@@ -695,10 +695,10 @@ MonoBehaviour:
   textTemplateList:
   - Reporting from [location], a trade of [price] for [item] has recently dropped.
     Is this a quality trade?
-  - "\u201C[location] dispatches a trade of [price] for [item]. Is this trade satisfactory?\u201D"
-  - "\u201C[item] of [price] has been transmitted from [location]. Is this trade
-    adequate?\u201D"
-  - "\u201C[location] has sent [item] for. Shall we proceed with the trade?"
+  - '[location] dispatches a trade of [price] for [item]. Is this trade satisfactory?'
+  - '[item] of [price] has been transmitted from [location]. Is this trade adequate?'
+  - '[location] has sent [item] for. Shall we proceed with the trade?'
+  - 
   tradeInterval: 10
   maxDuration: 40
   minDuration: 60
